@@ -1,0 +1,25 @@
+{
+  "name": "mytinerary-back-ayalaelsio",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "type": "module",
+  "scripts": {
+    "dev": "nodemon app.js",
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/ElsioAyala/mytinerary-back-ayalaElsio.git"
+  },
+  "author": "Elsio Ayala",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/ElsioAyala/mytinerary-back-ayalaElsio/issues"
+  },
+  "homepage": "https://github.com/ElsioAyala/mytinerary-back-ayalaElsio#readme",
+  "dependencies": {
+    "express": "4.18.2",
+    "nodemon": "^3.0.1"
+  }
+}
