@@ -5,7 +5,7 @@ GET http://localhost:3000/api/cities
 GET http://localhost:3000/api/cities/64dd352fe3af2a2163bc6e08
 
 
-### Recuperar todas las películas por un género
+### Recuperar todas las ciudades por un nombre
 GET http://localhost:3000/api/cities?name=Bu
 
 
