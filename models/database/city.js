@@ -10,7 +10,7 @@ export class CityModel {
       let regex = new RegExp("^" + name);
       return city.find({ city: { $regex: regex, $options: "i" } });
     }
-    return city.find({});
+    return city.find({}).populate("_itineraries", "title");
   }
 
   static create({ input }) {
@@ -25,14 +25,7 @@ export class CityModel {
 
   static update({ id, input }) {
     return new Promise((resolve) => {
-      resolve(
-        city.findOneAndUpdate(
-          { _id: id },
-          { $set: input },
-          { new: true },
-          { runValidators: true, setDefaultsOnInsert: true }
-        )
-      );
+      resolve(city.findOneAndUpdate({ _id: id }, { $set: input }, { new: true }, { runValidators: true, setDefaultsOnInsert: true }).populate("_itineraries"));
     });
   }
 
@@ -45,6 +38,14 @@ export class CityModel {
   static createMany(input) {
     return new Promise((resolve) => {
       resolve(city.insertMany(input));
+    });
+  }
+
+  static updateItineraries(id, newItinerary) {
+    console.log("ID DE LA CIUDAD A ACTUALIZAR: ", id);
+    console.log("ID DEL ITINERARIO A AGRERAR: ", newItinerary);
+    return new Promise((resolve) => {
+      resolve(city.findByIdAndUpdate(id, { $addToSet: { _itineraries: newItinerary } }, { new: true }));
     });
   }
 }

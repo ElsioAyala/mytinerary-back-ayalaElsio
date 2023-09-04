@@ -44,7 +44,7 @@ export class CitiesController {
   static async getById(req, res) {
     try {
       const { id } = req.params;
-      const city = await CityModel.getById(id);
+      const city = await CityModel.getById(id).populate("_itineraries");
       if (city) return res.json(city);
       res.status(404).json({ message: "City not found" });
     } catch (error) {

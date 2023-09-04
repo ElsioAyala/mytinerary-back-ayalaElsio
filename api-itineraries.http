@@ -1,0 +1,48 @@
+### Crear un itinerario con POST
+POST http://localhost:3000/api/itineraries
+Content-Type: application/json
+
+{
+  "title": "Madrid gastronomic: tapas, markets and restaurants",
+  "image": "/assets/images/itineraries/p-sol.jpg",
+  "nameUser": "Anna Lee",
+  "photoUser": "/assets/images/users/user-4.jpg",
+  "price": 3,
+  "duration": "2 days",
+  "likes": 63,
+  "hashtags": "#FlavorsOfMadrid #RestaurantsMadrid #MarketsMadrid",
+  "comments": "",
+  "_city": "64f4c001b05e1409c3ec12c5"
+}
+
+### Consultar todos los itinerarios
+GET http://localhost:3000/api/itineraries
+
+### Consultar itinerarios de una ciudad en particular
+GET http://localhost:3000/api/itineraries?city=64e3a962f256fd94ea2702ba
+
+### Consultar un itinerario en particular por ID
+GET http://localhost:3000/api/itineraries/64eea96e2ba984a80ff19b8f
+
+### Modificar un itinerario
+PATCH  http://localhost:3000/api/itineraries/64f53234072da30aaacdc0c2
+Content-Type: application/json
+
+{
+  
+  "image": "/assets/images/itineraries/tapas.jpg"
+  
+}
+
+### Modificar un itinerario (modificando _city)
+PATCH  http://localhost:3000/api/itineraries/64f0db1e4da1c30d11d17cfe
+Content-Type: application/json
+
+{
+  "price": 3,
+  "_city" : "64ef78ca795cce04a077de35"
+}
+
+
+### Borrar un itinerario
+DELETE http://localhost:3000/api/itineraries/64ef7907795cce04a077de4b
