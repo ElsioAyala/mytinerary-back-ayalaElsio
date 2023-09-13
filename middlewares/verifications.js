@@ -1,3 +1,5 @@
+import Joi from "joi";
+
 export const validateDataCity = (req, res, next) => {
   const payload = req.body;
 
@@ -38,3 +40,13 @@ export const validateDataItinerary = (req, res, next) => {
   }
   next();
 };
+
+export const validator = (schema) => [
+  (req, res, next) => {
+    const validation = schema.validate(req.body, { abortEarly: false });
+    if (validation.error) {
+      return res.status(400).json({ message: validation.error.details.map((err) => err.message) });
+    }
+    next();
+  },
+];

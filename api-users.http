@@ -1,0 +1,31 @@
+### Registrar
+POST http://localhost:3000/api/users/signup
+Content-Type: application/json
+
+{
+  "name": "Elsio",
+  "lastName": "Ayala",
+  "email": "elsioayala@gmail.com",
+  "password": "12345678",
+  "photo": "image.jpg",
+  "country": "pais"
+}
+
+### Login
+POST http://localhost:3000/api/users/signin
+Content-Type: application/json
+
+{
+  "email": "elsioayala@gmail.com",
+  "password": "12345678"
+}
+
+### Autenticar
+POST http://localhost:3000/api/users/authenticated
+Content-Type: application/json
+Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJlbWFpbCI6ImVsc2lvYXlhbGFAZ21haWwuY29tIiwiaWF0IjoxNjk0Mzk1OTM1LCJleHAiOjE2OTQ0ODIzMzV9.ZSQbZcNvMZzzL7vO82xxnZ3URk0TiFjk5WDV-hVgNCM
+
+### Logout
+POST http://localhost:3000/api/users/signout
+Content-Type: application/json
+Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJlbWFpbCI6ImVsc2lvYXlhbGFAZ21haWwuY29tIiwiaWF0IjoxNjk0Mzk1OTM1LCJleHAiOjE2OTQ0ODIzMzV9.ZSQbZcNvMZzzL7vO82xxnZ3URk0TiFjk5WDV-hVgNCM

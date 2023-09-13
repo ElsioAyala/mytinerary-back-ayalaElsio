@@ -42,8 +42,6 @@ export class CityModel {
   }
 
   static updateItineraries(id, newItinerary) {
-    console.log("ID DE LA CIUDAD A ACTUALIZAR: ", id);
-    console.log("ID DEL ITINERARIO A AGRERAR: ", newItinerary);
     return new Promise((resolve) => {
       resolve(city.findByIdAndUpdate(id, { $addToSet: { _itineraries: newItinerary } }, { new: true }));
     });

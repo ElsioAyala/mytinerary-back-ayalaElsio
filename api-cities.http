@@ -2,7 +2,7 @@
 GET http://localhost:3000/api/cities
 
 ### Recuperar una ciudad por id
-GET http://localhost:3000/api/cities/64ef78ca795cce04a077de30
+GET http://localhost:3000/api/cities/64f4c001b05e1409c3ec12c4
 
 
 ### Recuperar todas las ciudades por un nombre

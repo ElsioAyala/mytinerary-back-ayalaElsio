@@ -4,6 +4,7 @@ import "dotenv/config";
 
 import { citiesRouter } from "./routes/cities.js";
 import { itinerariesRouter } from "./routes/itineraries.js";
+import { usersRouter } from "./routes/auth.js";
 import "./config/db.js";
 
 const app = express();
@@ -12,6 +13,7 @@ app.use(json());
 
 app.use("/api/cities", citiesRouter);
 app.use("/api/itineraries", itinerariesRouter);
+app.use("/api/users", usersRouter);
 
 const PORT = process.env.PORT ?? 4000;
 
