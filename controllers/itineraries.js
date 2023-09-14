@@ -1,6 +1,7 @@
 import mongoose, { get } from "mongoose";
 import { ItineraryModel } from "../models/database/itinerary.js";
 import { CityModel } from "../models/database/city.js";
+import { response } from "express";
 
 export class ItinerariesController {
   /*** CREAR UN ITINERARIO ***/
@@ -222,5 +223,37 @@ export class ItinerariesController {
       .catch((err) => {
         res.status(400).json({ error: err.message });
       });
+  }
+
+  /* LIKE */
+  static async like(req, res) {
+    let isLike;
+    try {
+      isLike = await ItineraryModel.like(req.body.itinerary_id, req.user).then((response) => {
+        return response;
+      });
+    } catch (error) {
+      res.status(500).json({ error: error.message });
+    }
+
+    if (isLike) {
+      //remove
+      ItineraryModel.removeLike(req.body.itinerary_id, req.user)
+        .then((result) => {
+          res.json(result);
+        })
+        .catch((err) => {
+          res.status(422).json({ error: err.message });
+        });
+    } else {
+      //add
+      ItineraryModel.addLike(req.body.itinerary_id, req.user)
+        .then((result) => {
+          res.json(result);
+        })
+        .catch((err) => {
+          res.status(422).json({ error: err.message });
+        });
+    }
   }
 }

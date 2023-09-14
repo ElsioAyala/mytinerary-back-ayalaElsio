@@ -6,11 +6,6 @@ let citiesSchema = new Schema({
   image: { type: String, required: [true, "image is required field!"] },
   description: { type: String, required: [true, "description is required field!"] },
   _itineraries: [{ type: mongoose.Types.ObjectId, ref: "itinerary", inique: true }],
-  /*_itineraries: {
-    type: [mongoose.Types.ObjectId],
-    ref: "itinerary",
-    inique: true,
-  },*/
 });
 
 export default citiesSchema;

@@ -33,4 +33,24 @@ export class ItineraryModel {
       resolve(itinerary.deleteOne({ _id: id }));
     });
   }
+
+  static addLike(itinerary_id, user) {
+    return new Promise((resolve) => {
+      resolve(itinerary.findByIdAndUpdate(itinerary_id, { $push: { likes: user._id } }, { new: true }));
+    });
+  }
+
+  static removeLike(itinerary_id, user) {
+    return new Promise((resolve) => {
+      resolve(itinerary.findByIdAndUpdate(itinerary_id, { $pull: { likes: user._id } }, { new: true }));
+    });
+  }
+
+  static like(itinerary_id, user) {
+    console.log(itinerary_id);
+    console.log(user._id);
+    return new Promise((resolve) => {
+      resolve(itinerary.findOne({ _id: itinerary_id, likes: { $in: [user._id] } }));
+    });
+  }
 }

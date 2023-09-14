@@ -4,12 +4,12 @@ Content-Type: application/json
 
 {
   "title": "Madrid gastronomic: tapas, markets and restaurants",
-  "image": "/assets/images/itineraries/p-sol.jpg",
+  "image": "/assets/images/itineraries/tapas.jpg",
   "nameUser": "Anna Lee",
   "photoUser": "/assets/images/users/user-4.jpg",
   "price": 3,
   "duration": "2 days",
-  "likes": 63,
+  "likes": [],
   "hashtags": "#FlavorsOfMadrid #RestaurantsMadrid #MarketsMadrid",
   "comments": "",
   "_city": "64f4c001b05e1409c3ec12c5"
@@ -46,3 +46,117 @@ Content-Type: application/json
 
 ### Borrar un itinerario
 DELETE http://localhost:3000/api/itineraries/64ef7907795cce04a077de4b
+
+
+### like
+PUT http://localhost:3000/api/itineraries/like
+Content-Type: application/json
+Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJlbWFpbCI6ImVsc2lvYXlhbGFAZ21haWwuY29tIiwiaWF0IjoxNjk0Njk5NDY5LCJleHAiOjE2OTQ3ODU4Njl9.KdzEo61wYtnJni_604wZZm3W9BKsQUyniSsjzwUuvc8
+
+{
+  "itinerary_id": "65022c47e72226f70553cfcb"
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+### backup data
+{
+  "title": "Museums, Central Park and 5th avenue",
+  "image": "/assets/images/itineraries/central-park.jpg",
+  "nameUser": "James Smith",
+  "photoUser": "/assets/images/users/user-1.jpg",
+  "price": 3,
+  "duration": "2 days",
+  "likes": [],
+  "hashtags": "#TourismNYC #CentralParkNYC #CultureNYC #5thAvenueNYC",
+  "comments": "",
+  "_city": "64f4c001b05e1409c3ec12c2"
+}
+
+{
+  "title": "South Manhattan",
+  "image": "/assets/images/itineraries/estatua-de-la-libertad.jpg",
+  "nameUser": "Sarah Miller",
+  "photoUser": "/assets/images/users/user-2.jpg",
+  "price": 3,
+  "duration": "1 days",
+  "likes": [],
+  "hashtags": "#SouthManhattan #WallStreet #BrooklynBridge",
+  "comments": "",
+  "_city": "64f4c001b05e1409c3ec12c2"
+}
+
+{
+  "title": "tokyo in 5 days",
+  "image": "/assets/images/itineraries/asakusa.jpg",
+  "nameUser": "Michael Wilson",
+  "photoUser": "/assets/images/users/user-3.jpg",
+  "price": 3,
+  "duration": "5 days",
+  "likes": [],
+  "hashtags": "#TokyoSkytree #Shibuya #Tokyo5Days",
+  "comments": "",
+  "_city": "64f4c001b05e1409c3ec12c1"
+}
+
+{
+  "title": "The route of the temples",
+  "image": "/assets/images/itineraries/kiyomizudera.jpg",
+  "nameUser": "Michael Wilson",
+  "photoUser": "/assets/images/users/user-3.jpg",
+  "price": 3,
+  "duration": "3 days",
+  "likes": [],
+  "hashtags": "#TemplesTokyo #Sensoji #Zojoji #MeijiJingu #KandaMyojin",
+  "comments": "",
+  "_city": "64f4c001b05e1409c3ec12c1"
+}
+
+{
+  "title": "Madrid cultural: museums, palaces and parks",
+  "image": "/assets/images/itineraries/p-sol.jpg",
+  "nameUser": "Anna Lee",
+  "photoUser": "/assets/images/users/user-4.jpg",
+  "price": 3,
+  "duration": "1 days",
+  "likes": [],
+  "hashtags": "#PuertaDelSol #PlazaMayor #GranVia #RoyalPalace",
+  "comments": "",
+  "_city": "64f4c001b05e1409c3ec12c5"
+}
+
+{
+  "title": "Madrid gastronomic: tapas, markets and restaurants",
+  "image": "/assets/images/itineraries/tapas.jpg",
+  "nameUser": "Anna Lee",
+  "photoUser": "/assets/images/users/user-4.jpg",
+  "price": 3,
+  "duration": "2 days",
+  "likes": [],
+  "hashtags": "#FlavorsOfMadrid #RestaurantsMadrid #MarketsMadrid",
+  "comments": "",
+  "_city": "64f4c001b05e1409c3ec12c5"
+}

@@ -62,6 +62,7 @@ export const passportVerificator = passport.use(
       secretOrKey: process.env.SECRET,
     },
     async (payload, done) => {
+      console.log("passportVerificator payload: ", payload);
       try {
         const user = await UserModel.getUserbyEmail(payload.email);
         if (user) {
